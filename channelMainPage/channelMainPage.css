@@ -406,6 +406,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    display: none;
 }
 
 .play {
@@ -420,10 +421,6 @@ body {
 .play svg {
     width: 51px;
     height: 59px;
-}
-
-.play > :nth-child(1) {
-    display: none;
 }
 
 .next {
@@ -454,7 +451,6 @@ body {
     border-radius: 10px;
     border: none;
     outline: none;
-    transition: 0.4s;
     background-image:url("../images/slackcloseChannel.svg");
     background-position: center;
     background-repeat: no-repeat;
@@ -471,3 +467,10 @@ body {
     fill: #00B624;
 }
 
+.playIcon {
+    display: none !important;
+}
+
+.playButtonHover {
+    display: flex !important;
+}

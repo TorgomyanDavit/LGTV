@@ -17,10 +17,13 @@ var videoconteiner = document.querySelector(".videoconteiner")
 var childPlaylist = document.querySelector(".childPlaylist")
 
 
-
-
 parentChild[0].setAttribute("data-src", "../video/mov_bbb.mp4");
 parentChild[1].setAttribute("data-src", "../video/movie.mp4");
+parentChild[2].setAttribute("data-src", "../video/superSaqo.mp4");
+
+// parentChild[1].setAttribute("data-src", "http://4093ea53df76.mylistbest.com/playlists/uplist/573d5bbb9538ee3696dc4dedf23ba3be/playlist.m3u8");
+
+
 
 
 if(localStorage.getItem("booline") !== null) {

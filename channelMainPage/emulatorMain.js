@@ -14,11 +14,12 @@ var slackPosition = document.querySelectorAll(".slackPosition");
 var mainPageSizerDiv = document.querySelector(".mainPageSizerDiv");
 var parentChild = document.querySelectorAll(".parentChild");
 var video = document.getElementById('myVideo');
-
 localStorage.removeItem('pathName');
 
 parentChild[0].setAttribute("data-src", "../video/mov_bbb.mp4");
 parentChild[1].setAttribute("data-src", "../video/movie.mp4");
+parentChild[2].setAttribute("data-src", "../video/superSaqo.mp4");
+
 
 if(localStorage.getItem("openPopup") === "true") {
     chooseField.style.display = "";
@@ -246,7 +247,6 @@ document.addEventListener("keydown",function(event) {
                     }
                 }
             }
-            
         }
 
         if(menyu.classList.contains("transformLeftMenyu")) {
@@ -256,17 +256,7 @@ document.addEventListener("keydown",function(event) {
             iconDivMenu[0].firstElementChild.style.display = "none"
             iconDivMenu[0].lastElementChild.style.display = "block"
         }
-
-
-
     }
-    
-
-
-    
-    console.log(video.duration);
-
-
 })  
 
 
