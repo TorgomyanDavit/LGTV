@@ -1,0 +1,30 @@
+{
+    "vendor": "AllNet",
+    "largeIcon": "largeIcon.png",
+    "icon": "icon.png",
+    "main": "index.html",
+    "id": "com.allnet.app",
+    "title": "allnettv",
+    "type": "web",
+    "version": "0.0.1",
+    "appDescription": "This is an app tagline",
+    "bgColor": "red",
+    "iconColor": "red",
+    "bgImage": "./images/mainImgTv.png",
+    "closeOnRotation": false,
+    "disableBackHistoryAPI": false,
+    "handlesRelaunch": false,
+    "splashBackground": "./images/loadingImg.png",
+    "splashColor": "#111111",
+    "splashFitModeOnPortrait": "width",
+    "requiredMemory": 20,
+    "supportPortraitMode": true,
+    "supportTouchMode": "virtual",
+    "transparent": false,
+    "virtualTouch": {
+        "verticalThreshold": 20,
+        "horizontalThreshold": 50,
+        "positionEventOnPress": true,
+        "shortTouchThreshold": 30
+    }
+}

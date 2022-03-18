@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    cursor: context-menu;
+    background:  white;
+}
+
+.screenMain {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: #EAEAFF;
+
+}
+
+.childScreen {
+    max-width: 1120px;
+    margin-left: 106px;
+    padding-top: 25px;
+
+}
+
+.arrowBack {
+    display: flex;
+    align-items: center;
+    color: #282828;
+    margin-top: 33px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.arrowBack span {
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 16.6667px;
+}
+
+.arrowBack a {
+    width: 46.52px;
+    height: 46.48px;
+    background: #FFFFFF;
+    border-radius: 6.66667px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    border: 2px solid transparent;
+}
+
+.arrowBack a img {
+    width: 15.92px;
+}
+
+.childScreenSize {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 47px;
+}
+
+.childScreenSize .div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 324.67px;
+    height: 186px;
+    background: #CECDFF;
+    margin-bottom: 31px;
+}
+
+.childDiv {
+    width: 220px;
+    height: 113px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.childScreenSize .div:nth-child(n+4) {
+    margin-bottom: 0;
+}
+
+.div {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.div:hover {
+    border: 2px solid #00B624;
+}
+
+
+
+.childDiv:nth-child(1) {
+    align-content: space-between;
+}
+
+.div:nth-child(1) .childDiv p{
+    width: 104px;
+    height: 51px;
+    background: #4F4DFF;
+}
+
+.div:nth-child(2) .childDiv p{
+    width: 67px;
+    height: 50px;
+    background: #4F4DFF;
+}
+
+.div:nth-child(2) .childDiv p:nth-child(1){
+    width: 100%;
+}
+
+.div:nth-child(3) .childDiv p{
+    width: 106px;
+    height: 50px;
+    background: #4F4DFF;
+}
+
+.div:nth-child(3) .childDiv p:nth-child(1){
+    width: 100%;
+}
+
+.div:nth-child(4) .childDiv p{
+    width: 106px;
+    height: 50px;
+    background: #4F4DFF;
+}
+
+.div:nth-child(4) .childDiv p:nth-child(3){
+    width: 100%;
+}
+
+.div:nth-child(5) .childDiv p{
+    width: 106.67px;
+    height: 113.33px;
+    background: #4F4DFF;
+}
+
+.div:nth-child(6) .childDiv p{
+    width: 220px;
+    height: 50.67px;
+    background: #4F4DFF;
+}    
+
+
+
+/* emlator style */
+
+.inputSearchHover {
+    border: 2px solid #EEBA06 !important;
+    transition: 0.4s  !important;
+}
+
+.hoverRefresh {
+    transform: scale(1.1);
+    border: 2px solid #00B624  !important;
+}
+
+.channelsChildhover {
+    border: 2px solid #00B624  !important;
+}
+
+
+
+

@@ -1,0 +1,129 @@
+@media screen and (min-width:2000px) and (max-width:3840px) {
+    .listForPlayList {
+        width: 1050px;
+        height: 314px;
+        box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.02);
+        border-radius: 40px;
+        padding: 40px;
+        margin: 0;
+    }
+
+    .imgIconForPlaylist {
+        width: 234.74px;
+        height: 234.74px;
+        /* box-shadow: 4px 12px 26px rgba(238, 186, 6, 0.4); */
+        border-radius: 40px;   
+        margin-right: 54px;
+    }   
+    
+    .imgIconForPlaylist img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .innerText {
+        font-weight: bold !important;
+        font-size: 62px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .descriptionDiv span:nth-child(2) {
+        font-weight: 500;
+        font-size: 28px;
+    }
+
+    .deleteButton img {
+        width: 52px !important;
+        height: 60px !important;
+    }
+
+    .deleteButton {
+        width: 52px !important;
+        height: 60px !important;
+        position: relative;
+        left: 180px;
+    }
+
+    .mainPlayList .listForPlayList:nth-child(3n+2) {
+        margin: 0  75px 74px 75px !important;
+    }
+
+    .mainPlayList {
+        margin-top: 74px;
+    }
+}
+
+@media screen and (min-width:2000px) and (max-width:3700px) {
+    .listForPlayList  {
+        margin:20px !important;
+    }
+    .mainPlayList .listForPlayList:nth-child(3n+2) {
+        margin: 20px !important;
+    }
+}
+
+@media screen and (min-width:2000px) and (max-width:2560px)  {
+    .mainPlayList {
+        margin-top: 49px;
+    }
+
+    .listForPlayList {
+        width: 700px;
+        height: 209.33px;
+        box-shadow: 0px 5.33333px 26.6667px rgba(0, 0, 0, 0.02);
+        border-radius: 26.6667px;
+    }
+
+    .imgIconForPlaylist {
+        width: 156.49px;
+        height: 156.49px;
+        box-shadow: 2.66667px 8px 17.3333px rgba(238, 186, 6, 0.4);
+        border-radius: 26.6667px;
+    }
+
+    .imgIconForPlaylist img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .deleteButton img{
+        width: 34.67px !important;
+        height: 40px !important;
+        margin-left: 40px;
+    }
+
+    .deleteButton {
+        left: 40px;
+    }
+
+    .innerText {
+        font-weight: bold !important;
+        font-size: 41.3333px !important;
+    }
+
+    .descriptionDiv span:nth-child(2) {
+        font-weight: 500;
+        font-size: 18.6667px;
+    }
+
+    .listForPlayList  {
+        margin:0px !important;
+        padding: 26px;
+    }
+
+    .mainPlayList .listForPlayList:nth-child(3n+2) {
+        margin: 0px 50px 49px 50px !important;
+    }
+}
+
+@media screen and (min-width:2000px) and (max-width: 2480px) {
+    .mainPlayList .listForPlayList:nth-child(3n+2) {
+        margin: 20px !important;
+    }
+
+    .listForPlayList {
+        margin: 20px !important;
+    }
+}
+
+

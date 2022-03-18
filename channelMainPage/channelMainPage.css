@@ -1,0 +1,473 @@
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../fonts/Montserrat-Regular.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat-Regular";
+}
+
+body {
+    cursor: context-menu;
+    background:  white;
+    font-family: 'Montserrat' !important;
+}
+
+.channelMainPage {
+    position: relative;
+    overflow: hidden;
+    background: #EAEAFF;
+    width: 100vw;
+    height: 100vh;
+}
+
+.mainPageSizerDiv {
+    max-width: 1120px;
+    width: 100%;
+    margin-left: 106px;
+    margin-top: 25px;
+}
+
+/* pop up */
+.chooseFieldChild {
+    width: 428.67px;
+    height: 336px;
+    background: #FFFFFF;
+    border-radius: 13.3333px;
+    position: relative;
+}
+
+.Xbutton {
+    position: absolute;
+    right: 0;
+    width: 20px;
+    border: none;
+    outline: none;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.activeColorButton {
+    background-color: rgba(255, 31, 0, 0.85) !important;
+    left: 50% !important;
+    box-shadow: 0px 0px 20px rgba(255, 31, 0, 0.85) !important;
+}
+
+.colorButton {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 182, 36, 1);
+    width: 50%;
+    height: 100%;
+    border-radius: 100px;
+    z-index: 0;
+    transition: 0.5s;
+    box-shadow: 0px 0px 20px rgba(0, 182, 36, 0.85);
+}
+
+
+.EmulatorhoverXButton {
+    color: #FF1F00;
+    transform: scale(2);
+}
+
+.emulatorScaleButton {
+    transform: scale(1.1);
+}
+
+.hoverLive {
+    transform: scale(1.1);
+}
+
+.hoverLink {
+    color: #EEBA06 !important;
+    transform: scale(1.1);
+}
+
+.buttonDiv button {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+    width: 50%;
+    height: 100%;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.activeButton::after{
+    color: rgba(40, 40, 40, 1) !important;
+}
+
+.chooseFieldChild h3 {
+    width: 100%;
+    font-weight: bold;
+    font-size: 33.3333px;
+    color: #282828;
+    text-align: center;
+    margin-top: 42px;
+}
+
+.chooseFieldChild p {
+    color: #282828;
+    opacity: 0.5;
+    width: 77%;
+    margin-top: 22px !important;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+}
+
+.buttonDiv {
+    position: relative;
+    width: 278px;
+    height: 52.67px;
+    margin: 0 auto;
+    margin-top: 38px;
+    background: rgba(196, 196, 196, 0.26);
+    box-shadow: inset 0px 2.66667px 7.33333px rgba(0, 0, 0, 0.25);
+    border-radius: 66.6667px;
+    display: flex;
+}
+
+.button1:nth-child(1)::after {
+    content: "On";
+    position: absolute;
+    color: rgba(40, 40, 40, 0.2);
+    font-weight: bold;
+    font-size: 24.6667px;
+    top: 58px;
+    left: 50px;
+}
+
+.button1:nth-child(2)::after {
+    content: "OFF";
+    position: absolute;
+    color: rgba(40, 40, 40, 0.2);
+    font-weight: bold;
+    font-size: 24.6667px;
+    top: 58px;
+    right: 50px;
+}
+
+.MultiChannel {
+    margin-top: 54px;
+    display: flex;
+}
+
+.childChannel {
+    display: flex;
+    flex-direction: column;
+}
+
+.channelBlock {
+    min-width: 352.59px;
+    min-height: 318px;
+    background: url("../images/welcomImg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.LiveMoveSeriesParent {
+    display: flex;
+}
+
+.LiveMoveSeries1 {
+    margin-left: 19px;
+    min-width: 227.76px;
+    min-height: 227.76px;
+    border-radius: 20px;
+    box-shadow: 0px 11.2554px 33.104px rgba(238, 159, 6, 0.5);
+    background-image: url("../images/Livetv.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 319px;
+}
+
+.LiveMoveSeries2 {
+    margin-left: 19px;
+    min-width: 227.76px;
+    min-height: 227.76px;
+    border-radius: 20px;
+    box-shadow: 0px 11.2554px 33.104px rgba(0, 182, 36, 0.5);
+    background-image: url("../images/Movies.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 319px;
+}
+
+.LiveMoveSeries3 {
+    margin-left: 19px;
+    min-width: 227.76px;
+    min-height: 227.76px;
+    border-radius: 20px;
+    box-shadow: 0px 11.2554px 33.104px rgba(79, 77, 255, 0.5);
+    background-image: url("../images/series.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 319px;
+}
+
+.MultiScreenParent {
+    display: flex;
+    margin: 20px;
+}
+
+.MultiScreenParent > :nth-child(1) {
+    margin-right: 20px  !important;
+}
+
+.MultiScreenParent > :nth-child(2) {
+    margin-right: 20px  !important;
+}
+
+.MultiScreen {
+    width: 227.76px;
+    height: 68.86px;
+    border-radius: 13.2416px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.MultiScreen p:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2A29B4;
+    margin: 11px 15px 9px;
+    width: 46.35px;
+    height: 46.35px;
+    border-radius: 3px;
+    box-shadow: 0px 3.0904px 15.452px rgba(0, 0, 0, 0.02);
+}
+
+.MultiScreen p:nth-child(1) img {
+    width: 23.83px;
+    height: 23.83px;
+}
+
+.img2 {
+    background: #0085FF !important;
+}
+
+.img3 {
+    background: #FF1F00 !important;
+}
+
+.MultiScreen p:nth-child(2) {
+    color: #282828;
+    font-weight: 500;
+    font-size: 19.8624px;
+}
+
+.channelHeader {
+    max-width: 1120px !important;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.channelHeader p {
+    font-weight: bold;
+    font-size: 20px;  
+    text-transform: uppercase;
+}
+
+.channelHeader a {
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+}
+
+/* slick slider */
+.TvChannel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.channels {
+    display: flex;
+}
+
+.parentChild {
+    display: flex!important;
+    flex-direction: column;
+    width: 141px;
+    height: fit-content;
+    margin-right: 19px;
+}
+
+.channelsChild {
+    text-decoration: none;
+    width: inherit;
+    height: 124.67px;
+    border-radius: 10.3013px;
+    box-shadow: 0px 2.06026px 10.3013px rgba(0, 0, 0, 0.02);
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.channelsChild:hover {
+    border: 2px solid #00B624;
+}
+
+.channelsChild:focus {
+    outline: none !important;
+    border: 2px solid #00B624;
+}
+
+.text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.inputSearchHover {
+    border: 2px solid #EEBA06 !important;
+}
+
+.slick-cloned { display: none !important; }
+
+.slick-track {transition: 1s}
+/* slick slider code */
+
+.slick-prev {
+    display: none !important;
+}
+
+.slick-next {
+    display: none !important;
+}
+
+.slick-slider .slick-list {
+    height: 223px !important;
+}
+
+.chooseField {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(80, 80, 80, 0.8);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* player */
+.videoconteiner {
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    display: none;
+}
+
+#myVideo {
+    width: 100%;
+    height: 100%;
+}
+
+.sourceButton {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.61;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.play {
+    width: 51px;
+    height: 59px;
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.play svg {
+    width: 51px;
+    height: 59px;
+}
+
+.play > :nth-child(1) {
+    display: none;
+}
+
+.next {
+    width: 42px;
+    height: 57px;
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.prev {
+    width: 42px;
+    height: 57px;
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.backButton {
+    position: absolute;
+    top: 45px;
+    left: 87px;
+    width: 47px;
+    height: 47px;
+    background: rgba(196, 196, 196, 0.2);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    background-image:url("../images/slackcloseChannel.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* style hovere player */
+.backButtonHover {
+    transform: scale(1.3) !important;
+    border: 2px solid #00B624 !important;
+}
+
+.hoverSlack > svg path {
+    fill: #00B624;
+}
+

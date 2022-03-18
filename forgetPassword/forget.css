@@ -1,0 +1,128 @@
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../fonts/Montserrat-Regular.otf");
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Montserrat-Regular' !important;
+}
+
+.forgetPassword {
+    width: 430px;
+    height: 252.67px;
+    background: #FFFFFF;
+    border-radius: 13.3333px;
+    margin: 0 auto;
+    margin-top: 166px;
+    padding:  39px 37px;
+    position: relative;
+}
+
+.paswordtitle {
+    font-weight: bold;
+    font-size: 20px;
+    color: #010023;
+    margin-bottom: 24px;
+}
+
+.changingInput {
+    font-weight: 600;
+    font-size: 16px;
+    color: #282828;
+    padding-left: 26px;
+    width: 100%;
+    height: 46.67px;
+    box-shadow: inset 1.33333px 2.66667px 6.66667px rgba(0, 0, 0, 0.25);
+    border-radius: 6.66667px;
+    background: #28282810;
+    border: none;
+    margin-bottom: 23px;
+    outline: none;
+    border: 2px solid transparent;
+}
+
+.confirmButton {
+    background: #EEBA06;
+    border-radius: 6.66667px;
+    width: 100%;
+    height: 48.67px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.playListMain {
+    position: relative;
+    overflow-x: hidden !important;
+    width: 100vw;
+    height: 100vh;
+    background: #EAEAFF;
+}
+
+.childPlayList {
+    max-width: 1120px;
+    width: 100%;
+    margin-left: 106px;
+    margin-top: 25px;
+}
+
+.goBAckSlack {
+    background: rgba(196, 196, 196, 0.2);
+    border-radius: 3.33333px;
+    width: 33.33px;
+    height: 33.33px;
+    background-image: url("../images/goBackSvg.svg");
+    background-size: 11px;
+    background-position: center;
+    border: none;
+    outline: none;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 18px;
+    top: 21px;
+}
+
+.letterReceive {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.recLetDescription {
+    font-weight: bold;
+    font-size: 20px;
+    color: #010023;
+    margin-top: 22px;
+    text-align: center;
+    max-width: 330px;
+}
+
+.recLetter {
+    width: 119px;
+    height: 114px;
+}
+
+
+
+.inputSearchHover {
+    border: 2px solid #EEBA06 !important;
+    transition: 0.4s  !important;
+}
+
+.hoverLinkForButton {
+    color: white !important;
+    background: #4F4DFF !important;
+    transition: 0.4s;
+}
+
+.hoverRefresh {
+    transform: scale(1.1);
+    border: 2px solid #00B624 !important;
+}
+

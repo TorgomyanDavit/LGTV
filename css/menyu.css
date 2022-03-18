@@ -1,0 +1,289 @@
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../fonts/Montserrat-Regular.otf");
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Montserrat-Regular' !important;
+}
+/* menyu */
+.menyu {
+    /* display: none; */
+    padding: 35px 13px 53px 0px;
+    position: fixed;
+    z-index: 1;
+    width: 230px;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.15);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    left: -158px;
+    transition: 0.5s;
+}
+
+.miniDivMenyu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 41.33px;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 32px;
+}
+
+.nameMenyu {
+    color: #282828;
+    opacity: 0.5;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.iconDivMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 41.33px;
+    height: 41.33px;
+    border-radius: 100%;
+}
+
+.slackPosition {
+    position: absolute;
+    left: 158px;
+    display: none;
+    transition: 0.5s;
+    top: 10px;
+}
+
+.activeMenyu .slackPosition {
+    display: block;
+}
+
+.activeMenyu .nameMenyu {
+    opacity: 1;
+}
+
+.activeMenyu .iconDivMenu {
+    background: #00B624;
+}
+
+.activeMenyu .iconDivMenu > svg path{
+    fill: white;
+}
+
+
+
+
+
+.activeNoteforMenyu .slackPosition {
+    display: block;
+}
+
+.activeNoteforMenyu .nameMenyu {
+    opacity: 1;
+}
+
+.activeNoteforMenyu .iconDivMenu {
+    background: #EE9F06 !important;
+}
+
+.activeNoteforMenyu .iconDivMenu > svg path{
+    fill: white;
+}
+
+.svg1 {
+    display: none;
+}
+
+
+
+
+
+
+
+/* notification */
+
+.notification {
+    width: 398px;
+    height: 100%;
+    position: fixed;
+    right:-398px;
+    top: 0;
+    background: rgb(234, 234, 255);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    padding: 33px 0px 30px 0px;
+    transition: 0.5s;
+}
+
+.slackBack {
+    width: 204px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+    margin-left: 37px;
+}
+
+.backSlack {
+    width: 46.52px;
+    height: 46.48px;
+    border-radius: 6.66667px;
+    background: #FFFFFF;
+    background-image: url("../images/backslack.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+}
+
+.backTitle {
+    font-weight: bold;
+    font-size: 16.6667px;
+    color: #282828;
+    text-transform: uppercase;
+}
+
+.notichild {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.notificationChild{
+    display: flex;
+    align-items: center;
+}
+
+.notIcon {
+    width: 61px;
+    height: 61px;
+    background: #00B624;
+    box-shadow: 1.5844px 4.75319px 10.2986px rgba(0, 182, 36, 0.4);
+    border-radius: 15.844px;
+    background-image: url("../images/bell.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 19px;
+    transition: 0.4s;
+}
+
+.titleNoteMini {
+    display: flex;
+    flex-direction: column;
+}
+
+.titlering{
+    font-weight: bold;
+    font-size: 14px;
+    color: #282828;
+    max-width: 171px;
+    margin-bottom: 2px;
+}
+
+.timering {
+    color: #282828;
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0.4;
+}
+    
+.deletButton {
+    width: 17.5px;
+    height: 20px;
+    background-image: url("../images/deletIcon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 35px;
+    transition: 0.4s;
+}
+
+.mainNotificationHiden {
+    padding-left: 37px;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+}
+
+.innerScroll {
+    position: relative;
+    margin-top: 37px;
+    transition: 0.4s;
+}
+
+.notMessige {
+    display: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: #282828;
+    line-height: 16px;
+    margin-top: 15px;
+    max-width: 253px;
+}
+
+.showNot {
+    display: block !important;
+    transition: 1s;
+}
+
+.bacColoGreen {
+    background-color: #00B624;
+    box-shadow: 1.5844px 4.75319px 10.2986px rgba(0, 182, 36, 0.4);
+}
+
+.bacColored {
+    background-color: #FF1F00;
+    box-shadow: 1.5844px 4.75319px 10.2986px rgba(255, 31, 0, 0.4);
+}
+
+.bacColoblue{
+    background-color: #4F4DFF;
+    box-shadow: 1.5844px 4.75319px 10.2986px rgba(79, 77, 255, 0.4);
+}
+
+
+/* emulator Style */
+.backSlackHover {
+    border: 2px solid #00B624;
+    transform: scale(1.3);
+}
+
+.scaleRing {
+    transform: scale(1.3);
+    border: 2px solid white;
+}
+
+.scaleIcon {
+    transform: scale(2);
+}
+
+
+/* menyu */
+
+.activeHover {
+    transform: scale(1.3);
+    background: #EE9F06 !important;
+
+}
+
+.activeHover > svg path{
+    fill: white !important;
+}
+
+.activeHover .svg2 rect {
+    fill: white
+}
+
+.transformLeftMenyu {
+    left: 0px !important;
+}
+
+
+
+.transformLeftMenyu .slackPosition {
+    left: 0px;
+}
