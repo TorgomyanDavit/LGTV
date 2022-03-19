@@ -8,20 +8,15 @@
     <link rel="stylesheet" href="./user.css">
     <link rel="stylesheet" href="../css/menyu.css">
     <link rel="stylesheet" href="../css/header.css">
+    <!-- Tv player  -->
     <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
-
     <title>Document</title>
 </head>
 <body>
     <section class="playlistMain">
-        <video id='hls-example'  class="video-js vjs-default-skin" width="400" height="300" controls autoplay>
-            <source type="application/x-mpegURL" src="http://4093ea53df76.mylistbest.com/playlists/uplist/573d5bbb9538ee3696dc4dedf23ba3be/playlist.m3u8">
-        </video>
-
         <div class="videoconteiner">
-            <video id="myVideo" poster="../images/loadingImg.png">
-                <source id="source" type="video/mp4">
-            </video>
+            <video id="myVideo" class="video-js vjs-default-skin" poster="../images/loadingImg.png" ></video>
+
             <div class="sourceButton">
                 <button class="backButton"></button>
                 <button class="prev slack">
@@ -44,9 +39,6 @@
                 </button>
             </div>
         </div>
-
-    
-
 
         <div class="notification">
             <div class="slackBack">
@@ -273,15 +265,19 @@
            </section>
         </div>
     </section>
-    <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+
+    <!--Tv player -->
+    <!-- <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script> -->
     <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
 
-
+    <!-- jquery and slider -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" 
     integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- my pages -->
     <script src="./user.js"></script>
     <script src="../js/menyu.js"></script>
     <script src="./useremulator.js"></script>

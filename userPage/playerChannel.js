@@ -8,10 +8,14 @@ var slack = document.querySelectorAll(".slack")
 var mainPageSizerDiv = document.querySelector(".mainPageSizerDiv");
 
 
+
+
+
 var keyPlayer = null
 var channelType = 0
 var myTimeout = -1
 document.addEventListener("keydown",function(event) {
+
     if(videoconteiner.style.display === "block") {
         sourceButton.classList.add("playButtonHover")
         if(myTimeout !== -1) { clearTimeout(myTimeout); }
@@ -45,7 +49,7 @@ document.addEventListener("keydown",function(event) {
             // if(event.keyCode === 461
     
             if(event.keyCode ===  13 && keyPlayer === 1 && localStorage.getItem('pathName') === "true") {
-                video.pause()
+                videojs("myVideo").pause()
                 childPlaylist.style.display = "block"
                 menyu.style.display = "block"
                 notification.style.display = "block"
@@ -53,7 +57,7 @@ document.addEventListener("keydown",function(event) {
                 keyPlayer = 0
                 localStorage.removeItem('pathName');
             } else if(event.keyCode ===  13 && keyPlayer === 1 && localStorage.getItem('pathName') !== "true") {
-                video.pause()
+                videojs("myVideo").pause()
                 mainPageSizerDiv.style.display = "block"
                 menyu.style.display = "block"
                 notification.style.display = "block"
@@ -65,19 +69,19 @@ document.addEventListener("keydown",function(event) {
                 }
                 for(var i5 = 0;i5 < parentChild.length;i5++) {
                     if(i5 === channelType) {
-                        video.src = parentChild[i5].getAttribute("data-src")
-                        video.play()
+                        videojs("myVideo").src({type: "application/x-mpegURL", src: parentChild[i5].getAttribute("data-src")})
+                        videojs("myVideo").play()
                     }
                 }
             } else if(event.keyCode ===  13 && keyPlayer === 3) {
                 if(video.paused) {
                     play.children[0].classList.toggle("playIcon")
                     play.children[1].classList.toggle("playIcon")
-                    video.play()
+                    videojs("myVideo").play()
                 } else {
                     play.children[1].classList.toggle("playIcon")
                     play.children[0].classList.toggle("playIcon")
-                    video.pause()
+                    videojs("myVideo").pause()
                 }
             } else if(event.keyCode ===  13 && keyPlayer === 4) {
                 if(channelType < parentChild.length - 1) {
@@ -85,8 +89,8 @@ document.addEventListener("keydown",function(event) {
                 }
                 for(var i5 = 0;i5 < parentChild.length;i5++) {
                     if(i5 === channelType) {
-                        video.src = parentChild[i5].getAttribute("data-src")
-                        video.play()
+                        videojs("myVideo").src({type: "application/x-mpegURL", src: parentChild[i5].getAttribute("data-src")})
+                        videojs("myVideo").play()
                     }
                 }
             }  else if(event.keyCode === 34) {
@@ -95,10 +99,10 @@ document.addEventListener("keydown",function(event) {
                 }
                 for(var i5 = 0;i5 < parentChild.length;i5++) {
                     if(i5 === channelType) {
-                        video.src = parentChild[i5].getAttribute("data-src")
+                        videojs("myVideo").src({type: "application/x-mpegURL", src: parentChild[i5].getAttribute("data-src")})
                         play.children[0].classList.add("playIcon")
                         play.children[1].classList.remove("playIcon")
-                        video.play()
+                        videojs("myVideo").play()
                     }
                 }
             } else if(event.keyCode === 33) {
@@ -107,10 +111,10 @@ document.addEventListener("keydown",function(event) {
                 }
                 for(var i5 = 0;i5 < parentChild.length;i5++) {
                     if(i5 === channelType) {
-                        video.src = parentChild[i5].getAttribute("data-src")
+                        videojs("myVideo").src({type: "application/x-mpegURL", src: parentChild[i5].getAttribute("data-src")})
                         play.children[0].classList.add("playIcon")
                         play.children[1].classList.remove("playIcon")
-                        video.play()
+                        videojs("myVideo").play()
                     }
                 }
             } 
@@ -124,13 +128,3 @@ document.addEventListener("keydown",function(event) {
     }
     
 })
-
-
-var player = videojs('hls-example');
-player.play();
-
-
-
-//  parentChild[0].setAttribute("data-src", "../video/mov_bbb.mp4");
-// parentChild[1].setAttribute("data-src", "../video/movie.mp4");
-// parentChild[1].setAttribute("data-src", "http://4093ea53df76.mylistbest.com/playlists/uplist/573d5bbb9538ee3696dc4dedf23ba3be/playlist.m3u8");

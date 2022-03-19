@@ -16,9 +16,9 @@ var parentChild = document.querySelectorAll(".parentChild");
 var video = document.getElementById('myVideo');
 localStorage.removeItem('pathName');
 
-parentChild[0].setAttribute("data-src", "../video/mov_bbb.mp4");
-parentChild[1].setAttribute("data-src", "../video/movie.mp4");
-parentChild[2].setAttribute("data-src", "../video/superSaqo.mp4");
+parentChild[0].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/523/index.m3u8");
+parentChild[1].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/11007/index.m3u8");
+parentChild[2].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/2086/index.m3u8");
 
 
 if(localStorage.getItem("openPopup") === "true") {
@@ -232,8 +232,8 @@ document.addEventListener("keydown",function(event) {
                     window.location.href = "../settings/settings.html";
                 }
 
-            // console.log(numberSlider,event.keyCode);
-
+                // console.log(numberSlider,event.keyCode);
+                /** Tv Player */
                 if(event.keyCode ===  13 && numberOfMainKey === 7 && numberSlider !== null) {
                     mainPageSizerDiv.style.display = "none"
                     menyu.style.display = "none"
@@ -241,8 +241,8 @@ document.addEventListener("keydown",function(event) {
                     videoconteiner.style.display = "block"
                     for(var i5 = 0;i5 < parentChild.length;i5++) {
                         if(i5 === numberSlider) {
-                            video.src = parentChild[i5].getAttribute("data-src")
-                            video.play()
+                            videojs("myVideo").src({type: "application/x-mpegURL", src: parentChild[i5].getAttribute("data-src")})
+                            videojs("myVideo").play()
                         }
                     }
                 }

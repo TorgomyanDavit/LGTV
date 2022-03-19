@@ -12,16 +12,18 @@ var iconDivMenu = document.querySelectorAll(".iconDivMenu")
 var menyu = document.querySelector(".menyu")
 var slackPosition = document.querySelectorAll(".slackPosition")
 var video = document.getElementById('myVideo');
-var source = document.getElementById('source');
 var videoconteiner = document.querySelector(".videoconteiner")
 var childPlaylist = document.querySelector(".childPlaylist")
+var source = document.getElementById('source');
 
 
-parentChild[0].setAttribute("data-src", "../video/mov_bbb.mp4");
-parentChild[1].setAttribute("data-src", "../video/movie.mp4");
-parentChild[2].setAttribute("data-src", "../video/superSaqo.mp4");
 
-// parentChild[1].setAttribute("data-src", "http://4093ea53df76.mylistbest.com/playlists/uplist/573d5bbb9538ee3696dc4dedf23ba3be/playlist.m3u8");
+parentChild[0].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/523/index.m3u8");
+parentChild[1].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/11007/index.m3u8");
+parentChild[2].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/2086/index.m3u8");
+
+
+
 
 
 
@@ -238,14 +240,12 @@ document.addEventListener("keydown",function(event){
             videoconteiner.style.display = "block"
             for(var i5 = 0;i5 < parentChild.length;i5++) {
                 if(i5 === collectionKey) {
-                    video.src = parentChild[i5].getAttribute("data-src")
-                    video.play()
+                    videojs("myVideo").src({type: "application/x-mpegURL", src: parentChild[i5].getAttribute("data-src")})
+                    videojs("myVideo").play()
                 }
             }
         }
-
     }
-
 })
 
 

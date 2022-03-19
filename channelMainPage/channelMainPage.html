@@ -11,15 +11,19 @@
     <link rel="stylesheet" href="./channelMainPage.css">
     <link rel="stylesheet" href="../css/menyu.css">
     <link rel="stylesheet" href="../css/header.css">
+    <!-- Tv player  -->
+    <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
 
 
 </head>
 <body>
     <div class="channelMainPage">
         <div class="videoconteiner">
-            <video id="myVideo" poster="../images/loadingImg.png">
+            <video id="myVideo" class="video-js vjs-default-skin" poster="../images/loadingImg.png" ></video>
+
+            <!-- <video id="myVideo" poster="../images/loadingImg.png">
                 <source  id="source" type="video/mp4">
-            </video>
+            </video> -->
             <div class="sourceButton">
                 <button class="backButton"></button>
                 <button class="prev slack">
@@ -327,13 +331,18 @@
         </div>
     </div>
 
-
-
+    <!--Tv player -->
+    <!-- <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script> -->
+    <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
     
+    <!-- jquery and slider -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" 
     integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- my pages -->
     <script src="./channelMainPage.js"></script>
     <script src="../js/menyu.js"></script>
     <script src="../js/clock.js"></script>
