@@ -3,8 +3,8 @@ var signInbutton2 = document.querySelector(".button2")
 var imgParentLogo = document.querySelector(".imgParentLogo")
 
 
-    // for ok button keycode 13
-    // 37 left,38 arrowup,39 right,40 arrowdown
+// for ok button keycode 13
+// 37 left,38 arrowup,39 right,40 arrowdown
 
 document.addEventListener("keydown", function(event) {
     if((event.keyCode === 13) && signInbutton1.classList.contains("activebuttonhover")) {
@@ -24,3 +24,5 @@ document.addEventListener("keydown", function(event) {
         signInbutton2.classList.remove("activebuttonhover")
     } 
 });
+
+
