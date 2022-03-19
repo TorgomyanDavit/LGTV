@@ -155,7 +155,11 @@ document.addEventListener("keydown",function(event){
                 collectionKey = null
                 userListKey--
                 buttonCollection[2].classList.add("hoverRefresh")
-            }  else if(event.keyCode === 37) {
+            }  else if(event.keyCode === 37 && collectionKey === 0) {
+                iconDivMenu[2].classList.add("activeHover")
+                collectionKey = null
+                userListKey = -3
+            } else if(event.keyCode === 37) {
                 collectionKey --
             } else if(event.keyCode === 39 && collectionKey < parentChild.length - 1) {
                 collectionKey++
@@ -164,8 +168,8 @@ document.addEventListener("keydown",function(event){
             if(event.keyCode === 40 && collectionKey === -1) {
                 collectionKey++
             } else if(event.keyCode === 38 && collectionKey === 6) {
-                buttonCollection[2].classList.add("hoverRefresh")
-                userListKey = 4
+                userListKey = 3
+                buttonCollection[0].classList.add("hoverRefresh")
                 collectionKey = null
             }   else if(event.keyCode === 40 && collectionKey < parentChild.length - 7) {
                 // scroll channel
@@ -182,8 +186,8 @@ document.addEventListener("keydown",function(event){
                 }
                 collectionKey -= 7
             } else if(event.keyCode === 38 && collectionKey < 6) {
-                buttonCollection[2].classList.add("hoverRefresh")
-                userListKey = 4
+                userListKey = 3
+                buttonCollection[0].classList.add("hoverRefresh")
                 collectionKey = null
             } 
         }
@@ -205,7 +209,7 @@ document.addEventListener("keydown",function(event){
                 iconDivMenu[0].firstElementChild.classList.add("svg1")
                 iconDivMenu[0].lastElementChild.classList.remove("svg1")
             } else {
-                for(var i1 =0;i1 < slackPosition;i1++) {
+                for(var i1 = 0;i1 < slackPosition;i1++) {
                     slackPosition[i1].classList.add("slackMenyu")
                 }
                 menyu.classList.add("transformLeftMenyu")
@@ -246,6 +250,8 @@ document.addEventListener("keydown",function(event){
             }
         }
     }
+
+    console.log(userListKey,collectionKey,scrollTopBottom);
 })
 
 
