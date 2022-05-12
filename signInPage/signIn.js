@@ -44,9 +44,11 @@ document.addEventListener("keydown",function(event) {
         Link[1].classList.add("hoverLink")
     } else if(numberOfKey === 4) {
         input[1].classList.add("hoverInput")
-    } else if(numberOfKey === 5) {
-        forgetPassword.classList.add("hoverLink")
-    } else if(numberOfKey === 6) {
+    } 
+    // else if(numberOfKey === 5) {
+    //     forgetPassword.classList.add("hoverLink")
+    // } 
+    else if(numberOfKey === 5) {
         signInMainButton.classList.add("hoverLinkForButton")
     } 
 
@@ -64,14 +66,29 @@ document.addEventListener("keydown",function(event) {
         if ("INPUT" === document.activeElement.tagName) { input[0].blur() } else { input[0].focus()}
     } else if(event.keyCode === 13 && numberOfKey === 4) {
         if ("INPUT" === document.activeElement.tagName) { input[1].blur() } else {  input[1].focus() }
-    } else if(event.keyCode === 13 && numberOfKey === 5) {
-        window.location.href = "../forgetPassword/forget.html";
-    } else if(event.keyCode === 13 && numberOfKey === 6) {
+    } 
+    // else if(event.keyCode === 13 && numberOfKey === 5) {
+    //     window.location.href = "../forgetPassword/forget.html";
+    // } 
+    else if(event.keyCode === 13 && numberOfKey === 5) {
         localStorage.setItem("openPopup",true)
-        window.location.href = "../channelMainPage/channelMainPage.html";
+        postSign_In()
     }
 })
 
+var postSign_In = function() {
+    fetch(server+"/login", {
+        mode: 'cors',
+        method : "POST",
+        credentials: "same-origin",
+        headers : {'Content-Type' : 'application/json','Accept': 'application/json'},
+        body : JSON.stringify({email:input[0].value,password:input[1].value})
+    }).then(function(response) { return response.json()} )
+    .then(function(response) {
+        console.log(response);
+        // validation(response,input[0],input[1])
+    })
+}
 
 
 

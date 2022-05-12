@@ -2,6 +2,19 @@ var signInbutton1 = document.querySelector(".button1")
 var signInbutton2 = document.querySelector(".button2")
 var imgParentLogo = document.querySelector(".imgParentLogo")
 
+var descriptionHomePage = document.getElementById("descriptionHomePage")
+var TitleHomePage = document.getElementById("TitleHomePage")
+
+
+var getHomePage = function() {
+    fetch(server+"/home").then(function(response) { return response.json()} )
+    .then(function(response) {
+        descriptionHomePage.innerText = response.home.description
+        TitleHomePage.innerText = response.home.title
+        console.log(response);
+    });
+}
+getHomePage()
 
 // for ok button keycode 13
 // 37 left,38 arrowup,39 right,40 arrowdown
