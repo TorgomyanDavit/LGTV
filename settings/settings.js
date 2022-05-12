@@ -50,7 +50,7 @@ document.addEventListener("keydown",function(event) {
             userListKey--
         } else if(event.keyCode === 38 && userListKey < 0  && collectionKey === null) {
             userListKey++
-        } else if(event.keyCode === 40 && userListKey > -4 && userListKey < 0 && collectionKey === null) {
+        } else if(event.keyCode === 40 && userListKey > -5 && userListKey < 0 && collectionKey === null) {
             userListKey--
         } else if(event.keyCode === 40 && userListKey >= 0 && userListKey < 5 && collectionKey === null) {
             userListKey++
@@ -80,6 +80,9 @@ document.addEventListener("keydown",function(event) {
             iconDivMenu[2].classList.add("activeHover")
         } else if(userListKey === -4) {
             iconDivMenu[3].classList.add("activeHover")
+        }  else if(userListKey === -5) {
+            // debugger
+            iconDivMenu[4].classList.add("activeHover")
         } else if(userListKey === 0) {
             inputSearchList.classList.add("inputSearchHover")
         } else if(userListKey === 1) {
@@ -125,7 +128,10 @@ document.addEventListener("keydown",function(event) {
             var miniDivMenyu = document.querySelectorAll(".miniDivMenyu")
             notification.style.right = "0px"
             miniDivMenyu[2].classList.add("activeNoteforMenyu")
-            userListKey = -5
+            userListKey = -6
+        } else if(event.keyCode === 13 && userListKey === -5) {
+            // debugger
+            logauth(sessionStorage.getItem("authenticated"))
         } 
 
 

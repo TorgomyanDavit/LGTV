@@ -76,19 +76,6 @@ document.addEventListener("keydown",function(event) {
     }
 })
 
-var postSign_In = function() {
-    fetch(server+"/login", {
-        mode: 'cors',
-        method : "POST",
-        credentials: "same-origin",
-        headers : {'Content-Type' : 'application/json','Accept': 'application/json'},
-        body : JSON.stringify({email:input[0].value,password:input[1].value})
-    }).then(function(response) { return response.json()} )
-    .then(function(response) {
-        console.log(response);
-        // validation(response,input[0],input[1])
-    })
-}
 
 
 

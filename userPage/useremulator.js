@@ -18,10 +18,25 @@ var source = document.getElementById('source');
 
 
 
-parentChild[0].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/523/index.m3u8");
-parentChild[1].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/11007/index.m3u8");
-parentChild[2].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/2086/index.m3u8");
+// parentChild[0].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/523/index.m3u8");
+// parentChild[1].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/11007/index.m3u8");
+// parentChild[2].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/2086/index.m3u8");
 
+
+updateUserPage(sessionStorage.getItem("authenticated"),function(response) {
+    console.log(response);
+    var tvChannelBlock = document.querySelector(".TvChannelBlock")
+    var blockCount = response.tariffType[0].bouquet_id[0].bouquet_channels;
+    for(var o2 = 0;o2 < blockCount.length;o2++) {
+        var ntChild = document.createElement("div")
+        ntChild.className = "parentChild"
+        ntChild.innerHTML = "<a class=channelsChild data-src="+blockCount[o2].stream_source[0]+" ><img class=imgTv src=../images/channelImgTV.png /></a>" + "<p class=text >"+ blockCount[o2].stream_display_name +"</p>"
+        var img = ntChild.querySelector(".imgTv")
+        img.src = ""+blockCount[o2].stream_icon+""
+        tvChannelBlock.appendChild(ntChild);
+    };
+    parentChild = document.querySelectorAll(".channelsChild");
+});
 
 
 
@@ -108,9 +123,11 @@ document.addEventListener("keydown",function(event){
             userListKey = 2
         } else if(event.keyCode === 39 && (userListKey === -3 || userListKey === -4)&& !(inputSearchList.classList.contains("inputseracStyle"))) {
             userListKey = 3
+        } else if(event.keyCode === 39 && userListKey === -5 && !(inputSearchList.classList.contains("inputseracStyle"))) {
+            userListKey = 3
         } else if(event.keyCode === 38 && userListKey < -1 && !(inputSearchList.classList.contains("inputseracStyle"))) {
             userListKey++
-        } else if(event.keyCode === 40 && userListKey > -4 && userListKey <= -1 && !(inputSearchList.classList.contains("inputseracStyle"))) {
+        } else if(event.keyCode === 40 && userListKey > -5 && userListKey <= -1 && !(inputSearchList.classList.contains("inputseracStyle"))) {
             userListKey--
         } else if(event.keyCode === 39 && userListKey < 6 && userListKey >= 0 && !(inputSearchList.classList.contains("inputseracStyle"))) {
             userListKey++
@@ -122,7 +139,7 @@ document.addEventListener("keydown",function(event){
             userListKey = 2
         } 
         
-        for(var i4 =0;i4 < iconDivMenu.length;i4++) {
+        for(var i4 = 0; i4 < iconDivMenu.length; i4++) {
             iconDivMenu[i4].classList.remove("activeHover")
         }
 
@@ -134,6 +151,9 @@ document.addEventListener("keydown",function(event){
             iconDivMenu[2].classList.add("activeHover")
         } else if(userListKey === -4) {
             iconDivMenu[3].classList.add("activeHover")
+        } else if(userListKey === -5) {
+            // debugger
+            iconDivMenu[4].classList.add("activeHover")
         } else if(userListKey === 0) {
             refresh.classList.add("hoverRefresh")
         } else if(userListKey === 1) {
@@ -223,6 +243,9 @@ document.addEventListener("keydown",function(event){
             userListKey = - 2
         } else if(event.keyCode === 13 && userListKey === -4) {
             window.location.href = "../settings/settings.html";
+        } else if(event.keyCode === 13 && userListKey === -5) {
+            // debugger
+            logauth(sessionStorage.getItem("authenticated"))
         } else if(event.keyCode ===  13 && userListKey === 0) {
             location.reload();
         } else if(event.keyCode ===  13 && userListKey === 2) {

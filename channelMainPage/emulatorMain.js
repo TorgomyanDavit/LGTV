@@ -16,10 +16,29 @@ var parentChild = document.querySelectorAll(".parentChild");
 var video = document.getElementById('myVideo');
 localStorage.removeItem('pathName');
 
-parentChild[0].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/523/index.m3u8");
-parentChild[1].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/11007/index.m3u8");
-parentChild[2].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/2086/index.m3u8");
+// parentChild[0].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/523/index.m3u8");
+// parentChild[1].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/11007/index.m3u8");
+// parentChild[2].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/2086/index.m3u8");
 
+
+
+updateUserPage(sessionStorage.getItem("authenticated"),function(data) {
+    console.log(data);
+    var ChannelBlock = document.querySelector(".channels")
+    var blockCount = data.tariffType[0].bouquet_id[0].bouquet_channels;
+    
+    console.log(data);
+    for(var oo = 0;oo < blockCount.length;oo++) {
+        var Child = document.createElement("div")
+        Child.className = "parentChild"
+        Child.innerHTML = "<a href=# class=channelsChild data-src="+blockCount[oo].stream_source[0]+" ><img class=imgTv src=../images/channelImgTV.png /></a>" + "<p class=text >"+ blockCount[oo].stream_display_name +"</p>"
+        var img = Child.querySelector(".imgTv")
+        img.src = ""+blockCount[oo].stream_icon+""
+        ChannelBlock.appendChild(Child);
+    };
+    parentChild = document.querySelectorAll(".channelsChild");
+    channelsChild = document.querySelectorAll(".channelsChild");
+});
 
 if(localStorage.getItem("openPopup") === "true") {
     chooseField.style.display = "";
@@ -84,20 +103,20 @@ document.addEventListener("keydown",function(event) {
                 numberOfMainKey = -2
             } else if(event.keyCode === 39 && numberOfMainKey === -2) {
                 numberOfMainKey = -1
-            } else if(event.keyCode === 40 && numberOfMainKey > - 5 && numberOfMainKey < -1) {
+            } else if(event.keyCode === 40 && numberOfMainKey > -6 && numberOfMainKey < -1) {
                 numberOfMainKey--
             } else if(event.keyCode === 40 && numberOfMainKey === -1) {
                 liveChannelType[0].classList.add("hoverLive")
                 numberOfMainKey++
             } else if(event.keyCode === 38 && numberOfMainKey < -2) {
                 numberOfMainKey++
-            } else if(event.keyCode === 39 && (numberOfMainKey === -3 || numberOfMainKey === -4 || numberOfMainKey === -5)) {
+            } else if(event.keyCode === 39 && (numberOfMainKey === -3 || numberOfMainKey === -4 || numberOfMainKey === -5 || numberOfMainKey === -6)) {
                 numberOfMainKey = 0
-            }
+            } 
     
-            if(numberOfMainKey === -6) {
-                numberOfMainKey = -4
-            }
+            // if(numberOfMainKey === -6) {
+            //     numberOfMainKey = -4
+            // }
             // hover Men
             if(numberOfMainKey === 0) {
                 liveChannelType[0].classList.add("hoverLive")
@@ -111,6 +130,8 @@ document.addEventListener("keydown",function(event) {
                 iconDivMenu[2].classList.add("activeHover")
             }  else if(numberOfMainKey === -5 ) {
                 iconDivMenu[3].classList.add("activeHover")
+            }  else if(numberOfMainKey === -6 ) {
+                iconDivMenu[4].classList.add("activeHover")
             }  
     
         } else if(event.keyCode === 13 && numberOfMainKey < -1) {
@@ -138,7 +159,12 @@ document.addEventListener("keydown",function(event) {
                 } 
             } else if(numberOfMainKey === -5) {
                 window.location.href = "../settings/settings.html";
+            } else if(numberOfMainKey === -6) {
+                // debugger
+                logauth(sessionStorage.getItem("authenticated"))
             }
+
+
         } else {
             // remove class
             if(notification.style.right === "-398px" || notification.style.right === "") {
@@ -227,9 +253,19 @@ document.addEventListener("keydown",function(event) {
                 } else if(numberOfMainKey === 6 && event.keyCode === 13) {
                     window.location.href = "../userPage/user.html";
                 } else if(numberOfMainKey === 3 && event.keyCode === 13) {
-                    window.location.href = "../screenPage/screen.html";
+                    if(notification.style.right === "-398px" || notification.style.right === "") {
+                        notification.style.right = "0px"
+                        miniDivMenyu[2].classList.add("activeNoteforMenyu")
+                        numberOfMainKey = -3
+                        iconDivMenu[2].classList.remove("activeHover")
+                        liveChannelType[3].classList.remove("hoverLive")
+                    } 
+                    // window.location.href = "../screenPage/screen.html";
                 } else if(numberOfMainKey === 4 && event.keyCode === 13) {
                     window.location.href = "../settings/settings.html";
+                } else if(numberOfMainKey === 5 && event.keyCode === 13) {
+                    // debugger
+                    logauth(sessionStorage.getItem("authenticated"))
                 }
 
                 // console.log(numberSlider,event.keyCode);

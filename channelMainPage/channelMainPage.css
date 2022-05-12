@@ -266,7 +266,7 @@ body {
 }
 
 .img3 {
-    background: #FF1F00 !important;
+    background: transparent !important;
 }
 
 .MultiScreen p:nth-child(2) {
@@ -334,7 +334,11 @@ body {
 
 .channelsChild:focus {
     outline: none !important;
-    border: 2px solid #00B624;
+    border: 2px solid #00B624 !important;
+}
+
+.imgTv {
+    width: 100px !important;
 }
 
 .text {
@@ -344,6 +348,8 @@ body {
     margin-top: 10px;
     text-transform: uppercase;
 }
+
+
 
 .inputSearchHover {
     border: 2px solid #EEBA06 !important;

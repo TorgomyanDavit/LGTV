@@ -7,12 +7,18 @@ var notichild = document.querySelectorAll(".notichild")
 var notMessige = document.querySelectorAll(".notMessige ")
 var innerScroll = document.querySelector(".innerScroll")
 
+fetchNotification(sessionStorage.getItem("authenticated"))
 
 
 var notArray = []
-for(var i2 = 0;i2 < notichild.length;i2++) {
-    notArray[i2] = notichild[i2]
+
+var callnotichild = function() {
+    notichild = document.querySelectorAll(".clonedNote")
+    for(var i2 = 0;i2 < notichild.length;i2++) {
+        notArray[i2] = notichild[i2]
+    }
 }
+
 
 var numberHoverNot = null
 var numberDelete = null

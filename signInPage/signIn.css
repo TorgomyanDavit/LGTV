@@ -200,6 +200,9 @@ body {
     font-size: 12px;
 }
 
+.errorBorder {
+    border: 1px solid red  !important;
+}
 
 
 

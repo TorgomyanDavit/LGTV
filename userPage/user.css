@@ -322,6 +322,10 @@ body {
     fill: #00B624;
 }
 
+.imgTv {
+    width: 100px !important;
+}
+
 
 .playIcon {
     display: none !important;
