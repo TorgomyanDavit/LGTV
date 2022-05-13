@@ -173,6 +173,7 @@
 }
 
 .titleNoteMini {
+    min-width: 178px;
     display: flex;
     flex-direction: column;
 }
@@ -183,6 +184,19 @@
     color: #282828;
     max-width: 171px;
     margin-bottom: 2px;
+}
+
+
+#clonedNote {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.clonedNote {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
 
 .timering {
@@ -213,6 +227,14 @@
     position: relative;
     margin-top: 37px;
     transition: 0.4s;
+}
+
+
+#findNotification {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    display: none !important;
 }
 
 .notMessige {

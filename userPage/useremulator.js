@@ -23,24 +23,49 @@ var source = document.getElementById('source');
 // parentChild[2].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/2086/index.m3u8");
 
 
-updateUserPage(sessionStorage.getItem("authenticated"),function(response) {
-    console.log(response);
+
+
+var createLink = function(response) {
+
     var tvChannelBlock = document.querySelector(".TvChannelBlock")
-    var blockCount = response.tariffType[0].bouquet_id[0].bouquet_channels;
-    for(var o2 = 0;o2 < blockCount.length;o2++) {
+    var Allchanel = response.tariffType[0].bouquet_id
+    var ChannelShowes = [];
+
+    // debugger
+
+    for(var element of tvChannelBlock.children) {
+        element.remove()
+    }
+
+    var refIndex = Array.from(refChannel.children).findIndex(function(val) {
+        return val.classList.contains("activeButton")
+    })
+
+    if(refIndex === 0) {
+        ChannelShowes = Allchanel.reduce(function(aggr,val,i,array) {
+            aggr = aggr.concat(val.bouquet_channels)
+            return aggr
+        },[])
+    } else if(!!Allchanel[refIndex]) {
+        ChannelShowes = Allchanel[refIndex].bouquet_channels
+    } else {
+        ChannelShowes = []
+    }
+
+    for(var o2 = 0;o2 < ChannelShowes.length - 1;o2++) {
         var ntChild = document.createElement("div")
         ntChild.className = "parentChild"
-        ntChild.innerHTML = "<a class=channelsChild data-src="+blockCount[o2].stream_source[0]+" ><img class=imgTv src=../images/channelImgTV.png /></a>" + "<p class=text >"+ blockCount[o2].stream_display_name +"</p>"
+        ntChild.innerHTML = "<a class=channelsChild data-src="+ChannelShowes[o2].stream_source[0]+" ><img class=imgTv src=../images/channelImgTV.png /></a>" + "<p class=text >"+ ChannelShowes[o2].stream_display_name +"</p>"
         var img = ntChild.querySelector(".imgTv")
-        img.src = ""+blockCount[o2].stream_icon+""
+        img.src = ""+ChannelShowes[o2].stream_icon+""
         tvChannelBlock.appendChild(ntChild);
     };
+
+
     parentChild = document.querySelectorAll(".channelsChild");
-});
+}
 
-
-
-
+updateUserPage(sessionStorage.getItem("authenticated"),createLink);
 
 
 if(localStorage.getItem("booline") !== null) {
@@ -49,6 +74,7 @@ if(localStorage.getItem("booline") !== null) {
     inputSearchList.classList.add("inputSearchHover")
     localStorage.removeItem("booline");
 }
+
 
 function back() {
     if(playlistInput.classList.contains("formPosition")) {
@@ -67,6 +93,7 @@ function back() {
     }
 }
 
+
 function serachChannel() {
     for(var t = 0;t < TvChannelBlock.children.length;t++) {
         TvChannelBlock.children[t].style.display = "flex"
@@ -77,15 +104,15 @@ function serachChannel() {
     }
 }
 
+
 var userListKey = null
 var collectionKey = null
 var scrollTopBottom = 0
-
 document.addEventListener("keydown",function(event){
+
     if(event.keyCode ===  13 && userListKey === 1) {
         back()
     } else if(notification.style.right !== "0px" && videoconteiner.style.display !== "block") {
-
         if(event.keyCode !== 8  && !(inputSearchList.classList.contains("inputseracStyle"))) {
             refresh.classList.remove("hoverRefresh")
             inputSearchList.classList.remove("inputSearchHover")
@@ -100,6 +127,7 @@ document.addEventListener("keydown",function(event){
             for(var i = 0;i < buttonCollection.length;i++) {
                 buttonCollection[i].classList.remove("activeButton")
             }
+            updateUserPage(sessionStorage.getItem("authenticated"),createLink);
         }
     
         for(var j = 0;j < parentChild.length;j++) {
@@ -107,6 +135,7 @@ document.addEventListener("keydown",function(event){
                 parentChild[j].classList.remove("channelsChildhover")
             }
         }
+
         if(userListKey === null ) {
             userListKey = 1
         } else if(event.keyCode === 37 && userListKey === 0 && !(inputSearchList.classList.contains("inputseracStyle"))) {

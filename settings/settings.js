@@ -10,11 +10,11 @@ var inputSearchList = document.querySelector(".inputSearchList");
 var slackLanguig = document.querySelectorAll(".slackLanguig");
 var menyu = document.querySelector(".menyu");
 var slackPosition = document.querySelectorAll(".slackPosition");
+form.addEventListener("submit",function(e) {
+    e.preventDefault()
+})
 
-
-
-
-
+updateUserPage(sessionStorage.getItem("authenticated"),updatePassword);
 
 
 var userListKey = null
@@ -29,6 +29,8 @@ document.addEventListener("keydown",function(event) {
             clickLanguig.classList.remove("signInMainButtonhover")
             slackLanguig[0].classList.remove("editStyleHover")
             slackLanguig[1].classList.remove("editStyleHover")
+            editSvg[2].parentElement.querySelector(".userinputValue").type = "password"
+
         }
     
         for(var i = 0;i < iconDivMenu.length;i++) {
@@ -91,15 +93,17 @@ document.addEventListener("keydown",function(event) {
             editSvg[1].classList.add("editStyleHover")
         } else if(userListKey === 3) {
             editSvg[2].classList.add("editStyleHover")
-        } else if(userListKey === 4) {
-            if(languigDiv[0].classList.contains("addingLanguig")) {
-                slackLanguig[1].classList.remove("editStyleHover")
-                slackLanguig[0].classList.add("editStyleHover")
-            } else {
-                slackLanguig[0].classList.remove("editStyleHover")
-                slackLanguig[1].classList.add("editStyleHover")
-            }
-        } else if(userListKey === 5) {
+        } 
+        // else if(userListKey === 4) {
+        //     if(languigDiv[0].classList.contains("addingLanguig")) {
+        //         slackLanguig[1].classList.remove("editStyleHover")
+        //         slackLanguig[0].classList.add("editStyleHover")
+        //     } else {
+        //         slackLanguig[0].classList.remove("editStyleHover")
+        //         slackLanguig[1].classList.add("editStyleHover")
+        //     }
+        // } 
+        else if(userListKey === 4) {
             clickLanguig.classList.add("signInMainButtonhover")
         }
 
@@ -155,33 +159,54 @@ document.addEventListener("keydown",function(event) {
                 editSvg[2].parentElement.querySelector(".userinputValue").blur() 
             } else {
                 editSvg[2].parentElement.querySelector(".userinputValue").focus() 
+                editSvg[2].parentElement.querySelector(".userinputValue").type = "text"
+
             }
         } else if(userListKey === 4 && event.keyCode === 13 && collectionKey === null) {
-            collectionKey = 0
-            languigDiv[1].classList.add("addingLanguig")
-            languigDiv[0].classList.add("addingLanguig")
-        } else if(userListKey === 4 && event.keyCode === 13 && collectionKey === 0) {
-            collectionKey = null
-            languigDiv[1].classList.remove("addingLanguig")
-            languigDiv[0].classList.remove("channelsChildhover")
-        } else if(userListKey === 4 && event.keyCode === 13 && collectionKey === 1) {
-            collectionKey = null
-            languigDiv[0].classList.remove("addingLanguig")
-            languigDiv[1].classList.remove("channelsChildhover")
+            // debugger
+            updateUserDate(
+                {
+                    username:form[0].value,
+                    email:form[1].value,
+                    password:form[2].value,
+                    id:sessionStorage.getItem("ID")
+                },
+                sessionStorage.getItem("authenticated"),
+                sessionStorage.getItem("ID")
+            );
+            // updateUserPage(sessionStorage.getItem("authenticated"),updatePassword);
         }
+        
+
+
+
+        // Languig function
+        // else if(userListKey === 4 && event.keyCode === 13 && collectionKey === null) {
+        //     collectionKey = 0
+        //     languigDiv[1].classList.add("addingLanguig")
+        //     languigDiv[0].classList.add("addingLanguig")
+        // } else if(userListKey === 4 && event.keyCode === 13 && collectionKey === 0) {
+        //     collectionKey = null
+        //     languigDiv[1].classList.remove("addingLanguig")
+        //     languigDiv[0].classList.remove("channelsChildhover")
+        // } else if(userListKey === 4 && event.keyCode === 13 && collectionKey === 1) {
+        //     collectionKey = null
+        //     languigDiv[0].classList.remove("addingLanguig")
+        //     languigDiv[1].classList.remove("channelsChildhover")
+        // }
     
 
-        if(collectionKey === 0) {
-            languigDiv[1].classList.remove("channelsChildhover")
-            languigDiv[0].classList.add("channelsChildhover")
-            slackLanguig[1].classList.remove("editStyleHover")
-            slackLanguig[0].classList.add("editStyleHover")
-        } else if(collectionKey === 1) {
-            languigDiv[0].classList.remove("channelsChildhover")
-            languigDiv[1].classList.add("channelsChildhover")
-            slackLanguig[0].classList.remove("editStyleHover")
-            slackLanguig[1].classList.add("editStyleHover")
-        }
+        // if(collectionKey === 0) {
+        //     languigDiv[1].classList.remove("channelsChildhover")
+        //     languigDiv[0].classList.add("channelsChildhover")
+        //     slackLanguig[1].classList.remove("editStyleHover")
+        //     slackLanguig[0].classList.add("editStyleHover")
+        // } else if(collectionKey === 1) {
+        //     languigDiv[0].classList.remove("channelsChildhover")
+        //     languigDiv[1].classList.add("channelsChildhover")
+        //     slackLanguig[0].classList.remove("editStyleHover")
+        //     slackLanguig[1].classList.add("editStyleHover")
+        // }
 
     }
 })

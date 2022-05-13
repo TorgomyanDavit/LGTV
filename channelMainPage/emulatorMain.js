@@ -89,7 +89,7 @@ document.addEventListener("keydown",function(event) {
                     buttonDiv.classList.remove("activeColorButton");
                 }
             } 
-    
+
         } else if ((event.keyCode === 37 || event.keyCode === 38 || event.keyCode === 39 || event.keyCode === 40) && numberOfMainKey <= -1 && (notification.style.right === "-398px" || notification.style.right === "")) {
             if(numberOfMainKey < -1) {
                 for(var t = 0;t < iconDivMenu.length;t++) {
@@ -160,7 +160,6 @@ document.addEventListener("keydown",function(event) {
             } else if(numberOfMainKey === -5) {
                 window.location.href = "../settings/settings.html";
             } else if(numberOfMainKey === -6) {
-                // debugger
                 logauth(sessionStorage.getItem("authenticated"))
             }
 

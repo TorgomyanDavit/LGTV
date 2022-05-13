@@ -66,6 +66,7 @@ document.addEventListener("keydown",function(event) {
         } 
       
         if(numberHoverNot !== -1 ) {
+            // debugger
             notArray.forEach(function(val,i2) {
                 if(i2 === numberHoverNot && numberDelete === 0) {
                     val.querySelector(".notIcon").classList.add("scaleRing")
@@ -79,7 +80,9 @@ document.addEventListener("keydown",function(event) {
         if(event.keyCode === 13 && numberDelete === 1) {
             notArray = notArray.filter(function(val,i2)  {
                 if(i2 === numberHoverNot) {
+                    deleteMessagePost(sessionStorage.getItem("authenticated"),val.data_src)
                     val.remove()
+                    numberHoverNot = null
                 } else {
                     return val
                 }

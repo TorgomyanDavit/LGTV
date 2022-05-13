@@ -176,7 +176,7 @@ input[type=password]:read-only {
 }
 
 .addingLanguig {
-    display: flex;
+    display: none !important;
 }
 
 .channelsChildhover {

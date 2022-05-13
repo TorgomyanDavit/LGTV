@@ -38,14 +38,18 @@ var createNotification = function(data) {
     console.log(clonedNote);
 }
 
-var fetchNotification = function(id,token) {
+var fetchNotification = function(token) {
+    // debugger
     fetch(server+"/notification/"+ID,{
         mode: 'cors', 
         method : "GET", 
         headers : {"Content-Type" : "application/json","Accept" : "application/json","Authorization" : "Bearer "+token+""}
     }).then(function(result) {return  result.json()})
     .then(function(result) {
+
         if(!!result.notifications) {
+        // debugger
+
             result.notifications.forEach(function(val) {
                 createNotification(val);
             });
@@ -53,6 +57,7 @@ var fetchNotification = function(id,token) {
         }
     });
 };
+
 
 
 var postSign_In = function() {
@@ -110,19 +115,6 @@ var TimeOuth = function(array) {
 };
 
 
-var updateUserPage = function(token,createChild) {
-    fetch(server+"/userPage",{
-        mode: 'cors', 
-        method : "GET", 
-        headers : {"Content-Type" : "application/json","Accept" : "application/json","Authorization" : "Bearer "+token+""}
-    }).then(function(result) {return  result.json()})
-    .then(function(result) {
-        // console.log(result);
-        createChild(result)
-    });
-}
-
-
 var logauth = function(token) {
     fetch(server + "/logout",{
         mode: 'cors',
@@ -135,4 +127,50 @@ var logauth = function(token) {
         location.reload();
     })
 }
+
+
+var updateUserPage = function(token,createChild) {
+    fetch(server+"/userPage",{
+        mode: 'cors', 
+        method : "GET", 
+        headers : {"Content-Type" : "application/json","Accept" : "application/json","Authorization" : "Bearer "+token+""}
+    }).then(function(result) {return  result.json()})
+    .then(function(result) {
+        createChild(result)
+    });
+}
+
+
+var updateUserDate = function(body,token,id) {
+    fetch(server+"/user/"+id,{
+        mode: 'cors',
+        method : "PUT",
+        headers : {"Content-Type" : "application/json","Accept" : "application/json","Authorization" : "Bearer "+token+""},
+        body:JSON.stringify(body)
+    }).then(function(result){return result.json()})
+    .then(function(result) {
+        console.log(result);
+    });
+}
+
+var updatePassword = function(data) {
+    form[1].type = "email"
+    form[2].type = "password"
+    form[0].value = data.user.username
+    form[1].value = data.user.email
+    form[2].value = data.user.password
+}
+
+
+var deleteMessagePost = function(token,id) {
+    fetch(server+"/notification/"+id,{
+        mode: 'cors',
+        method : "DELETE",
+        headers : {"Content-Type" : "application/json","Accept" : "application/json","Authorization" : "Bearer "+token+""},
+        body:JSON.stringify(id)
+    })
+    .then(function(result) {return result.json()})
+    .then(function(result) {console.log(result)});
+}
+
 
