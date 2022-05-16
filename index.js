@@ -11,7 +11,7 @@ var getHomePage = function() {
     .then(function(response) {
         descriptionHomePage.innerText = response.home.description
         TitleHomePage.innerText = response.home.title
-        console.log(response);
+        console.log(response,"get home page");
     });
 }
 getHomePage()

@@ -6,6 +6,7 @@ var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 var ID = sessionStorage.getItem("ID")
 
 
+
 var authentication = function() {
     if(!!sessionStorage.getItem("authenticated") && checkPath === true) {
         window.location.href = "../channelMainPage/channelMainPage.html";
@@ -28,14 +29,10 @@ var createNotification = function(data) {
         deskriptionNotif.innerHTML = data.title
         timering.innerHTML = data.created_at.split(' ')[0]
         notMessige.innerHTML = data.description
-        
-        // console.log(deskriptionNotif);
         clonedNote.id = "";
         clonedNote.classList.add("clonedNote");
         mainNotification.appendChild(clonedNote);
     }
-    console.log(data);
-    console.log(clonedNote);
 }
 
 var fetchNotification = function(token) {
@@ -46,10 +43,7 @@ var fetchNotification = function(token) {
         headers : {"Content-Type" : "application/json","Accept" : "application/json","Authorization" : "Bearer "+token+""}
     }).then(function(result) {return  result.json()})
     .then(function(result) {
-
         if(!!result.notifications) {
-        // debugger
-
             result.notifications.forEach(function(val) {
                 createNotification(val);
             });
@@ -57,8 +51,6 @@ var fetchNotification = function(token) {
         }
     });
 };
-
-
 
 var postSign_In = function() {
     fetch(server+"/login", {
@@ -93,7 +85,6 @@ var fetchUserHomePage = function(token) {
         headers : {"Content-Type" : "application/json","Accept" : "application/json","Authorization" : "Bearer "+token+""}
     }).then(function(result) {return result.json()})
     .then(function(result) {
-        console.log(result);
         sessionStorage.setItem("ID",result.user.id);
         ID = result.user.id;
         window.location.href = "../channelMainPage/channelMainPage.html";
@@ -128,8 +119,9 @@ var logauth = function(token) {
     })
 }
 
-
 var updateUserPage = function(token,createChild) {
+    // debugger
+    img_loading.style.display = "inline"
     fetch(server+"/userPage",{
         mode: 'cors', 
         method : "GET", 
@@ -140,7 +132,6 @@ var updateUserPage = function(token,createChild) {
     });
 }
 
-
 var updateUserDate = function(body,token,id) {
     fetch(server+"/user/"+id,{
         mode: 'cors',
@@ -149,7 +140,7 @@ var updateUserDate = function(body,token,id) {
         body:JSON.stringify(body)
     }).then(function(result){return result.json()})
     .then(function(result) {
-        console.log(result);
+        console.log(result,"updateUserDate");
     });
 }
 
@@ -161,7 +152,6 @@ var updatePassword = function(data) {
     form[2].value = data.user.password
 }
 
-
 var deleteMessagePost = function(token,id) {
     fetch(server+"/notification/"+id,{
         mode: 'cors',
@@ -170,7 +160,7 @@ var deleteMessagePost = function(token,id) {
         body:JSON.stringify(id)
     })
     .then(function(result) {return result.json()})
-    .then(function(result) {console.log(result)});
+    .then(function(result) {console.log(result,"delete message")});
 }
 
 

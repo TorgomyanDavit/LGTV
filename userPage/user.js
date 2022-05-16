@@ -2,7 +2,8 @@
 
 var buttonCollection = document.querySelectorAll(".buttonRef")
 for(var i = 0;i < buttonCollection.length;i++) {
-        buttonCollection[i].addEventListener("click",function() {
+
+    buttonCollection[i].addEventListener("click",function() {
         var active = document.querySelector(".activeButton")
         active.classList.remove("activeButton")
         buttonCollection[i].classList.add("activeButton")

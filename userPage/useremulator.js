@@ -15,8 +15,7 @@ var video = document.getElementById('myVideo');
 var videoconteiner = document.querySelector(".videoconteiner")
 var childPlaylist = document.querySelector(".childPlaylist")
 var source = document.getElementById('source');
-
-
+var img_loading = document.getElementById("loading_img")
 
 // parentChild[0].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/523/index.m3u8");
 // parentChild[1].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/11007/index.m3u8");
@@ -26,33 +25,28 @@ var source = document.getElementById('source');
 
 
 var createLink = function(response) {
-
     var tvChannelBlock = document.querySelector(".TvChannelBlock")
     var Allchanel = response.tariffType[0].bouquet_id
     var ChannelShowes = [];
-
-    // debugger
-
-    for(var element of tvChannelBlock.children) {
-        element.remove()
-    }
+    tvChannelBlock.innerHTML = "";
 
     var refIndex = Array.from(refChannel.children).findIndex(function(val) {
         return val.classList.contains("activeButton")
     })
+    console.log(tvChannelBlock.children);
 
     if(refIndex === 0) {
         ChannelShowes = Allchanel.reduce(function(aggr,val,i,array) {
             aggr = aggr.concat(val.bouquet_channels)
             return aggr
         },[])
-    } else if(!!Allchanel[refIndex]) {
-        ChannelShowes = Allchanel[refIndex].bouquet_channels
+    } else if(!!Allchanel[refIndex - 1]) {
+        ChannelShowes = Allchanel[refIndex - 1].bouquet_channels
     } else {
         ChannelShowes = []
     }
 
-    for(var o2 = 0;o2 < ChannelShowes.length - 1;o2++) {
+    for(var o2 = 0;o2 < ChannelShowes.length ;o2++) {
         var ntChild = document.createElement("div")
         ntChild.className = "parentChild"
         ntChild.innerHTML = "<a class=channelsChild data-src="+ChannelShowes[o2].stream_source[0]+" ><img class=imgTv src=../images/channelImgTV.png /></a>" + "<p class=text >"+ ChannelShowes[o2].stream_display_name +"</p>"
@@ -61,8 +55,10 @@ var createLink = function(response) {
         tvChannelBlock.appendChild(ntChild);
     };
 
-
     parentChild = document.querySelectorAll(".channelsChild");
+    img_loading.style.display = "none"
+
+    console.log(parentChild);
 }
 
 updateUserPage(sessionStorage.getItem("authenticated"),createLink);
@@ -103,7 +99,6 @@ function serachChannel() {
         }
     }
 }
-
 
 var userListKey = null
 var collectionKey = null
@@ -302,8 +297,6 @@ document.addEventListener("keydown",function(event){
             }
         }
     }
-
-    console.log(userListKey,collectionKey,scrollTopBottom);
 })
 
 

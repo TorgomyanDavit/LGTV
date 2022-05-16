@@ -23,11 +23,9 @@ localStorage.removeItem('pathName');
 
 
 updateUserPage(sessionStorage.getItem("authenticated"),function(data) {
-    console.log(data);
     var ChannelBlock = document.querySelector(".channels")
     var blockCount = data.tariffType[0].bouquet_id[0].bouquet_channels;
     
-    console.log(data);
     for(var oo = 0;oo < blockCount.length;oo++) {
         var Child = document.createElement("div")
         Child.className = "parentChild"
@@ -267,7 +265,6 @@ document.addEventListener("keydown",function(event) {
                     logauth(sessionStorage.getItem("authenticated"))
                 }
 
-                // console.log(numberSlider,event.keyCode);
                 /** Tv Player */
                 if(event.keyCode ===  13 && numberOfMainKey === 7 && numberSlider !== null) {
                     mainPageSizerDiv.style.display = "none"

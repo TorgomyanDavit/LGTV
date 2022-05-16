@@ -223,13 +223,7 @@ body {
     width: 100% !important;
 }
 
-.scrollUserPage {
-    width: fit-content;
-    height: 500px;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-top: 34px;
-}
+
 
 
 
@@ -323,7 +317,7 @@ body {
 }
 
 .imgTv {
-    width: 100px !important;
+    width: 70px !important;
 }
 
 
@@ -333,4 +327,23 @@ body {
 
 .playButtonHover {
     display: flex !important;
+}
+
+#loading_img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 150px;
+    z-index: 1;
+}
+
+
+.scrollUserPage {
+    max-width: 100%;
+    height: 500px;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 34px;
+    position: relative;
 }
