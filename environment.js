@@ -120,7 +120,6 @@ var logauth = function(token) {
 }
 
 var updateUserPage = function(token,createChild) {
-    // debugger
     img_loading.style.display = "inline"
     fetch(server+"/userPage",{
         mode: 'cors', 

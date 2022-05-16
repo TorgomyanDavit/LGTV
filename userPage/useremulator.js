@@ -17,12 +17,6 @@ var childPlaylist = document.querySelector(".childPlaylist")
 var source = document.getElementById('source');
 var img_loading = document.getElementById("loading_img")
 
-// parentChild[0].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/523/index.m3u8");
-// parentChild[1].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/11007/index.m3u8");
-// parentChild[2].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/2086/index.m3u8");
-
-
-
 
 var createLink = function(response) {
     var tvChannelBlock = document.querySelector(".TvChannelBlock")
