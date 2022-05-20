@@ -7,6 +7,7 @@ var ID = sessionStorage.getItem("ID")
 
 
 
+
 var authentication = function() {
     if(!!sessionStorage.getItem("authenticated") && checkPath === true) {
         window.location.href = "../channelMainPage/channelMainPage.html";
@@ -36,7 +37,6 @@ var createNotification = function(data) {
 }
 
 var fetchNotification = function(token) {
-    // debugger
     fetch(server+"/notification/"+ID,{
         mode: 'cors', 
         method : "GET", 
@@ -104,7 +104,6 @@ var TimeOuth = function(array) {
         });
     },2000);
 };
-
 
 var logauth = function(token) {
     fetch(server + "/logout",{

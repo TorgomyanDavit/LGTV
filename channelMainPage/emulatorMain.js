@@ -15,6 +15,8 @@ var mainPageSizerDiv = document.querySelector(".mainPageSizerDiv");
 var parentChild = document.querySelectorAll(".parentChild");
 var video = document.getElementById('myVideo');
 localStorage.removeItem('pathName');
+var img_loading = document.getElementById("loading_img")
+
 
 // parentChild[0].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/523/index.m3u8");
 // parentChild[1].setAttribute("data-src", "http://fcf2e861.ucomist.net/iptv/CB5F2GMTR7SUDF/11007/index.m3u8");
@@ -36,6 +38,8 @@ updateUserPage(sessionStorage.getItem("authenticated"),function(data) {
     };
     parentChild = document.querySelectorAll(".channelsChild");
     channelsChild = document.querySelectorAll(".channelsChild");
+    img_loading.style.display = "none"
+
 });
 
 if(localStorage.getItem("openPopup") === "true") {

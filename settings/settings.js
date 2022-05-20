@@ -10,6 +10,7 @@ var inputSearchList = document.querySelector(".inputSearchList");
 var slackLanguig = document.querySelectorAll(".slackLanguig");
 var menyu = document.querySelector(".menyu");
 var slackPosition = document.querySelectorAll(".slackPosition");
+
 form.addEventListener("submit",function(e) {
     e.preventDefault()
 })
